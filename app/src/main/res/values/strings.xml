@@ -1,0 +1,11 @@
+<resources>
+    <string name="main">Главный экран</string>
+    <string name="name">Календарь</string>
+    <string name="Nazvanie">Название</string>
+    <string name="Sobitie">Событие</string>
+    <string name="Save">Сохранить</string>
+    <string name="Exit">Назад</string>
+    <string name="Mesto">Место</string>
+    <string name="Zadacha">Заметки</string>
+
+</resources>

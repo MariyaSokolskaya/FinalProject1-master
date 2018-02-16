@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pasha.finalproject1.TaskActivity"
+    android:orientation="vertical"
+    tools:ignore="NamespaceTypo">
+
+    <EditText
+        android:id="@+id/naz"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Nazvanie" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Установить напоминание"
+        android:id="@+id/swi"
+        />
+
+    <TimePicker
+        android:id="@+id/TimePick"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0dff00"
+
+        />
+
+    <TextView
+        android:id="@+id/CurTime"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:text="Сменить время" />
+
+    <EditText
+        android:id="@+id/mesto"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Mesto" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/Save" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/Exit" />
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_records"
+        android:text="Показать"/>
+    <TextView
+        android:id="@+id/base_context"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="База данных"/>
+
+</LinearLayout>
