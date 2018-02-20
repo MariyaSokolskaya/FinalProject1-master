@@ -63,19 +63,17 @@ public class TaskActivity extends AppCompatActivity implements View.OnClickListe
         mYear = i.getIntExtra("Year", defaultValue);
         mMonth = i.getIntExtra("Month", defaultValue);
         mDay = i.getIntExtra("Day", defaultValue);
-        dbHelper = new DBHelper(this);
+       // dbHelper = new DBHelper(this);
         SetTime.setEnabled(false);
 
         String DATA1 = mDay + "." + mMonth + "." + mYear;
-      //  dbHelper = new DBHelper(getBaseContext());
+        dbHelper = new DBHelper(getBaseContext());
         SQLiteDatabase db;
         db = dbHelper.getReadableDatabase();
         String SRAVNENIE3 = "SELECT * FROM "+DBHelper.TABLE_CONTACTS+" WHERE "+DBHelper.KEY_DATA+"="+ "\""+DATA1+"\";";
         Cursor cursor3 = db.rawQuery(SRAVNENIE3,null);
         cursor3.moveToFirst();
-        //if (cursor3 != null){
-        if (cursor3.getCount()!=0){
-            while (cursor3.moveToNext()) {
+        while (cursor3.moveToNext()) {
 
                 String nazvanie = cursor3.getString(cursor3.getColumnIndex(DBHelper.KEY_NAZVANIE));
                 String time = cursor3.getString(cursor3.getColumnIndex(DBHelper.KEY_TIME));
@@ -85,8 +83,8 @@ public class TaskActivity extends AppCompatActivity implements View.OnClickListe
                 TimeDisplay.setText(time);
                 Mesto.setText(mesto);
                 baseContext.append(nazvanie+" "+time+" "+mesto+"\n");
-            }
         }
+
         cursor3.close();
         db.close();
     }
@@ -226,8 +224,9 @@ switch (view.getId()){
             String nazvanie = cursor1.getString(cursor1.getColumnIndex(DBHelper.KEY_NAZVANIE));
             String time = cursor1.getString(cursor1.getColumnIndex(DBHelper.KEY_TIME));
             String mesto = cursor1.getString(cursor1.getColumnIndex(DBHelper.KEY_MESTO));
+            String data = cursor1.getString(cursor1.getColumnIndex(DBHelper.KEY_DATA));
 
-            baseContext.append(nazvanie + " " + time + "" + mesto + "\n");
+            baseContext.append(nazvanie + " " + time + "" + mesto + " " + data + "\n");
         }
         cursor1.close();
         db.close();

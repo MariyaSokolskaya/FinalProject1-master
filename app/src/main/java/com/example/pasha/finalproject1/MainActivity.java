@@ -42,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        //Intent intentService = new Intent(this, ReminderService.class);
+        //startService(intentService);
+        //TODO время нужно запросить из базы и перевести в миллисекунды, соответствующие системному
+        boolean onOffService = true;
+        if(onOffService) {//TODO это временное условие, для отладки
+
+            ReminderService.setServiceAlarm(this, onOffService);
+            onOffService = false;
+        }
 
     }
 
